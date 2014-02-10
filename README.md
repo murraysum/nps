@@ -1,6 +1,6 @@
 # Nps
 
-TODO: Write a gem description
+A Net Promoter Score (NPS) calculator; does exactly as it says on the tin.
 
 ## Installation
 
@@ -18,7 +18,38 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Firstly, create a new calculator:
+```
+require 'nps'
+
+calculator = Nps::Calculator.new
+```
+
+Voting is simply achieved by:
+```
+# Promoter vote
+calculator.vote!(10)
+
+# Passive vote
+calculator.vote!(8)
+
+# Detractor vote
+calculator.vote!(6)
+```
+
+The NPS score can be calculated by:
+```
+# Calculate the NPS score
+calculator.score
+```
+
+It is also useful to know the percentage of votes in each category:
+```
+# Show the percentage of promoters, passives and detractors
+calculator.percentage_of_promoters
+calculator.percentage_of_passives
+calculator.percentage_of_detractors
+```
 
 ## Contributing
 
