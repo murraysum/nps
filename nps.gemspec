@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Nps::VERSION
   spec.authors       = ["Murray Summers"]
   spec.email         = ["murray.sum@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Net Promoter Score (NPS) is a customer loyalty metric allowing customer satisfaction to be compared over time and business sector.}
+  spec.summary       = %q{A Net Promoter Score (NPS) calculator}
+  spec.homepage      = "https://github.com/murraysum/nps"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
