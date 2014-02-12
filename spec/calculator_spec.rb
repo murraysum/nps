@@ -1,21 +1,10 @@
 require 'spec_helper'
 
 describe Nps::Calculator do
-  describe 'with no votes' do
+  describe 'with an empty ballot' do
     before :each do
-      @calculator = Nps::Calculator.new
-    end
-
-    it 'have zero promoters' do
-      @calculator.promoters.should == 0
-    end
-
-    it 'have zero passives' do
-      @calculator.passives.should == 0
-    end
-
-    it 'have zero detractors' do
-      @calculator.detractors.should == 0
+      @ballot = Nps::Ballot.new
+      @calculator = Nps::Calculator.new(@ballot)
     end
 
     it 'have a zero score' do
@@ -35,22 +24,11 @@ describe Nps::Calculator do
     end
   end
 
-  describe 'with a promoter vote' do
+  describe 'with a promoter ballot' do
     before :each do
-      @calculator = Nps::Calculator.new
-      @calculator.vote!(10)
-    end
-
-    it 'have a promoter' do
-      @calculator.promoters.should == 1
-    end
-
-    it 'have zero passives' do
-      @calculator.passives.should == 0
-    end
-
-    it 'have zero detractors' do
-      @calculator.detractors.should == 0
+      @ballot = Nps::Ballot.new
+      @calculator = Nps::Calculator.new(@ballot)
+      @ballot.vote!(10)
     end
 
     it 'have a score' do
@@ -70,22 +48,11 @@ describe Nps::Calculator do
     end
   end
 
-  describe 'with a passive vote' do
+  describe 'with a passive ballot' do
     before :each do
-      @calculator = Nps::Calculator.new
-      @calculator.vote!(7)
-    end
-
-    it 'have zero promoters' do
-      @calculator.promoters.should == 0
-    end
-
-    it 'have a passive' do
-      @calculator.passives.should == 1
-    end
-
-    it 'have zero detractors' do
-      @calculator.detractors.should == 0
+      @ballot = Nps::Ballot.new
+      @calculator = Nps::Calculator.new(@ballot)
+      @ballot.vote!(7)
     end
 
     it 'have a score' do
@@ -105,22 +72,11 @@ describe Nps::Calculator do
     end
   end
 
-  describe 'with a detractor vote' do
+  describe 'with a detractor ballot' do
     before :each do
-      @calculator = Nps::Calculator.new
-      @calculator.vote!(0)
-    end
-
-    it 'have zero promoters' do
-      @calculator.promoters.should == 0
-    end
-
-    it 'have zero passives' do
-      @calculator.passives.should == 0
-    end
-
-    it 'have a detractor' do
-      @calculator.detractors.should == 1
+      @ballot = Nps::Ballot.new
+      @calculator = Nps::Calculator.new(@ballot)
+      @ballot.vote!(0)
     end
 
     it 'have a score' do
@@ -140,35 +96,24 @@ describe Nps::Calculator do
     end
   end
 
-  describe 'with promoter, passive and detractor votes' do
+  describe 'with a mixed ballot' do
     before :each do
-      @calculator = Nps::Calculator.new
+      @ballot = Nps::Ballot.new
+      @calculator = Nps::Calculator.new(@ballot)
       # Promoters
-      @calculator.vote!(10)
-      @calculator.vote!(9)
+      @ballot.vote!(10)
+      @ballot.vote!(9)
       # Passives
-      @calculator.vote!(8)
-      @calculator.vote!(7)
+      @ballot.vote!(8)
+      @ballot.vote!(7)
       # Detractors
-      @calculator.vote!(6)
-      @calculator.vote!(5)
-      @calculator.vote!(4)
-      @calculator.vote!(3)
-      @calculator.vote!(2)
-      @calculator.vote!(1)
-      @calculator.vote!(0)
-    end
-
-    it 'have promoters' do
-      @calculator.promoters.should == 2
-    end
-
-    it 'have passives' do
-      @calculator.passives.should == 2
-    end
-
-    it 'have detractors' do
-      @calculator.detractors.should == 7
+      @ballot.vote!(6)
+      @ballot.vote!(5)
+      @ballot.vote!(4)
+      @ballot.vote!(3)
+      @ballot.vote!(2)
+      @ballot.vote!(1)
+      @ballot.vote!(0)
     end
 
     it 'have a score' do
