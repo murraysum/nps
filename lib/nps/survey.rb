@@ -1,5 +1,5 @@
 module Nps
-  class Report
+  class Survey
 
     attr_reader :ballot
 

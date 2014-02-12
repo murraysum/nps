@@ -18,37 +18,37 @@ Or install it yourself as:
 
 ## Usage
 
-Firstly, create a new calculator:
+Firstly, create a new survey:
 ```
 require 'nps'
 
-calculator = Nps::Calculator.new
+survey = Nps::Survey.new
 ```
 
 Voting is simply achieved by:
 ```
 # Promoter vote
-calculator.vote!(10)
+survey.vote!(10)
 
 # Passive vote
-calculator.vote!(8)
+survey.vote!(8)
 
 # Detractor vote
-calculator.vote!(6)
+survey.vote!(6)
 ```
 
 The NPS score can be calculated by:
 ```
 # Calculate the NPS score
-calculator.score
+survey.score
 ```
 
 It is also useful to know the percentage of votes in each category:
 ```
 # Show the percentage of promoters, passives and detractors
-calculator.percentage_of_promoters
-calculator.percentage_of_passives
-calculator.percentage_of_detractors
+survey.percentage_of_promoters
+survey.percentage_of_passives
+survey.percentage_of_detractors
 ```
 
 ## Contributing
