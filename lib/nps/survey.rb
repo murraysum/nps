@@ -4,7 +4,7 @@ module Nps
     attr_reader :ballot
 
     def initialize
-      @ballot = Nps::Ballot.new
+      @ballot = Nps.configuration.persistance.new
     end
 
     def score

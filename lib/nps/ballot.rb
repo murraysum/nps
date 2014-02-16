@@ -1,5 +1,3 @@
-require 'ostruct'
-
 module Nps
   class Ballot
 
