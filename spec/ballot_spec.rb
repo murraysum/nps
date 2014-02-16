@@ -8,19 +8,19 @@ describe Nps::Ballot do
     end
 
     it 'have no promoter votes' do
-      @ballot.promoters.should == 0
+      @ballot.count_votes(9..10).should == 0
     end
 
     it 'have no passive votes' do
-      @ballot.passives.should == 0
+      @ballot.count_votes(7..8).should == 0
     end
 
     it 'have no detractor votes' do
-      @ballot.detractors.should == 0
+      @ballot.count_votes(0..6).should == 0
     end
 
     it 'have no votes' do
-      @ballot.votes?.should be_false
+      @ballot.any_votes?.should be_false
     end
 
     it 'have no votes in all categories' do
@@ -35,19 +35,19 @@ describe Nps::Ballot do
     end
 
     it 'have a promoters vote' do
-      @ballot.promoters.should == 1
+      @ballot.count_votes(9..10).should == 1
     end
 
     it 'have no passive votes' do
-      @ballot.passives.should == 0
+      @ballot.count_votes(7..8).should == 0
     end
 
     it 'have no detractor votes' do
-      @ballot.detractors.should == 0
+      @ballot.count_votes(0..6).should == 0
     end
 
     it 'have votes' do
-      @ballot.votes?.should be_true
+      @ballot.any_votes?.should be_true
     end
 
     it 'have one vote' do
@@ -62,19 +62,19 @@ describe Nps::Ballot do
     end
 
     it 'have no promoter votes' do
-      @ballot.promoters.should == 0
+      @ballot.count_votes(9..10).should == 0
     end
 
     it 'have a passive vote' do
-      @ballot.passives.should == 1
+      @ballot.count_votes(7..8).should == 1
     end
 
     it 'have no detractor votes' do
-      @ballot.detractors.should == 0
+      @ballot.count_votes(0..6).should == 0
     end
 
     it 'have votes' do
-      @ballot.votes?.should be_true
+      @ballot.any_votes?.should be_true
     end
 
     it 'have one vote' do
@@ -89,19 +89,19 @@ describe Nps::Ballot do
     end
 
     it 'have no promoter votes' do
-      @ballot.promoters.should == 0
+      @ballot.count_votes(9..10).should == 0
     end
 
     it 'have no passive votes' do
-      @ballot.passives.should == 0
+      @ballot.count_votes(7..8).should == 0
     end
 
     it 'have a detractor vote' do
-      @ballot.detractors.should == 1
+      @ballot.count_votes(0..6).should == 1
     end
 
     it 'have votes' do
-      @ballot.votes?.should be_true
+      @ballot.any_votes?.should be_true
     end
 
     it 'have one vote' do
