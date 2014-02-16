@@ -3,7 +3,7 @@ module Nps
 
     attr_reader :ballot
 
-    # Public: Initialize a new Net Promoter Score (NPS) survey
+    # Public: Initialize a Net Promoter Score (NPS) survey
     #
     # Example:
     #   survey = Nps::Survey.new
