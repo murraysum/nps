@@ -56,7 +56,7 @@ survey.percentage_of_detractors
 
 ### Ballot Adaptor
 
-By default NPS comes with an in-memory adapter (`NPS::Ballot`) for storing NPS votes. You can also optionally configure NPS to use a different adapter to store your votes in a database or another persistance store:
+By default NPS comes with an in-memory adapter `NPS::Ballot` for storing NPS votes. You can also optionally configure NPS to use a different adapter to store your votes in a database or another persistance store:
 
 ```
   Nps.configure do |config|
@@ -64,6 +64,51 @@ By default NPS comes with an in-memory adapter (`NPS::Ballot`) for storing NPS v
   end
 ```
 To use a different adapter you must implement the same API as `NPS::Ballot`.
+
+```
+  class YourBallotAdaptor
+
+    # Public: Initialize a Net Promoter Score ballot to store votes cast
+    # on a survey.
+    def initialize
+
+    end
+
+    # Public: Cast a vote with a given NPS value.
+    #
+    # value - The value of the vote on the NPS scale.
+    # opts - A hash of meta data associated with the vote (default: {}) 
+    def vote!(value, opts = {})
+
+    end
+
+    # Public: Whether any votes have been cast.
+    def any_votes?
+
+    end
+
+    # Public: The total number of votes that have been cast.
+    def total_votes
+
+    end
+
+    # Public: Find the votes that have been cast with a
+    # NPS value in the range.
+    #
+    # range - The range of NPS values.
+    def find_votes(range)
+
+    end
+
+    # Public: Count the votes that have been cast with a
+    # NPS value in the range.
+    #
+    # range - The range of NPS values.
+    def count_votes(range)
+
+    end
+  end
+```
 
 ## Contributing
 
