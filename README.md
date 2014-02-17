@@ -51,6 +51,17 @@ survey.percentage_of_passives
 survey.percentage_of_detractors
 ```
 
+### Ballot Adaptor
+
+By default NPS comes with an in-memory adapter (`NPS::Ballot`) for storing NPS votes. You can also optionally configure NPS to use a different adapter to store your votes in a database or another persistance store:
+
+```
+  Nps.configure do |config|
+    config.ballot_adaptor = YourBallotAdapter
+  end
+```
+To use a different adapter you must implement the same API as `NPS::Ballot`.
+
 ## Contributing
 
 1. Fork it

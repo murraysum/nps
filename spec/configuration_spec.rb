@@ -7,19 +7,19 @@ describe Nps::Configuration do
       @configuration = Nps::Configuration.new
     end
 
-    it 'should set the default ballot engine' do
-      @configuration.ballot_engine == Nps::Ballot
+    it 'should set the default ballot adaptor' do
+      @configuration.ballot_adaptor == Nps::Ballot
     end
   end
 
   describe 'with custom options' do
     before :each do
       @configuration = Nps::Configuration.new
-      @configuration.ballot_engine = Struct
+      @configuration.ballot_adaptor = Struct
     end
 
-    it 'should set a custom ballot engine' do
-      @configuration.ballot_engine == Struct
+    it 'should set a custom ballot adaptor' do
+      @configuration.ballot_adaptor == Struct
     end
   end
 end

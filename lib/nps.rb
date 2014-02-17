@@ -16,7 +16,7 @@ module Nps
   #
   # Examples:
   #   Nps.configure do |config|
-  #     config.ballot_engine = BallotClass
+  #     config.ballot_adaptor = YourBallotAdaptor
   #   end
   #
   def configure
