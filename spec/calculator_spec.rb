@@ -117,19 +117,19 @@ describe Nps::Calculator do
     end
 
     it 'have a score' do
-      @calculator.score.should == BigDecimal.new('-45.46')
+      @calculator.score.should == -45.46
     end
 
     it 'have a percentage of promoters' do
-      @calculator.percentage_of_promoters.should == BigDecimal.new('18.18')
+      @calculator.percentage_of_promoters.should == 18.18
     end
 
     it 'have a percentage of passives' do
-      @calculator.percentage_of_passives.should == BigDecimal.new('18.18')
+      @calculator.percentage_of_passives.should == 18.18
     end
 
     it 'have a percentage of detractors' do
-      @calculator.percentage_of_detractors.should == BigDecimal.new('63.64')
+      @calculator.percentage_of_detractors.should == 63.64
     end
   end
 end

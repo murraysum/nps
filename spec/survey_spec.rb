@@ -21,19 +21,19 @@ describe Nps::Survey do
     end
 
     it 'have a score' do
-      @survey.score.should == BigDecimal.new('-45.46')
+      @survey.score.should == -45.46
     end
 
     it 'have a percentage of promoters' do
-      @survey.percentage_of_promoters.should == BigDecimal.new('18.18')
+      @survey.percentage_of_promoters.should == 18.18
     end
 
     it 'have a percentage of passives' do
-      @survey.percentage_of_passives.should == BigDecimal.new('18.18')
+      @survey.percentage_of_passives.should == 18.18
     end
 
     it 'have a percentage of detractors' do
-      @survey.percentage_of_detractors.should == BigDecimal.new('63.64')
+      @survey.percentage_of_detractors.should == 63.64
     end
   end
 end

@@ -7,7 +7,7 @@ module Nps
 
     def vote!(value, options = {})
       @votes << OpenStruct.new(
-        :value => BigDecimal.new(value),
+        :value => value.to_f,
         :options => options
       )
     end

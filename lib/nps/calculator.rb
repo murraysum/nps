@@ -15,17 +15,17 @@ module Nps
 
     # Internal: The percentage of promoter votes in the ballot.
     def percentage_of_promoters
-      @ballot.any_votes? ? ((promoters.to_f / @ballot.total_votes) * 100).round(2) : 0
+      @ballot.any_votes? ? ((promoters.to_f / @ballot.total_votes.to_f) * 100.0).round(2) : 0.0
     end
 
     # Internal: The percentage of passive votes in the ballot.
     def percentage_of_passives
-      @ballot.any_votes? ? ((passives.to_f / @ballot.total_votes) * 100).round(2) : 0
+      @ballot.any_votes? ? ((passives.to_f / @ballot.total_votes.to_f) * 100.0).round(2) : 0.0
     end
 
     # Internal: The percentage of detractor votes in the ballot.
     def percentage_of_detractors
-      @ballot.any_votes? ? ((detractors.to_f / @ballot.total_votes) * 100).round(2) : 0
+      @ballot.any_votes? ? ((detractors.to_f / @ballot.total_votes.to_f) * 100.0).round(2) : 0.0
     end
 
     private

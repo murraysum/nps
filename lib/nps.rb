@@ -1,4 +1,3 @@
-require 'bigdecimal'
 require 'ostruct'
 
 require "nps/version"
