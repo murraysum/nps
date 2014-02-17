@@ -18,6 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
+### Introduction
 Firstly, create a new survey:
 ```
 require 'nps'
@@ -25,6 +26,7 @@ require 'nps'
 survey = Nps::Survey.new
 ```
 
+### Voting
 Voting is simply achieved by:
 ```
 # Promoter vote
@@ -37,6 +39,7 @@ survey.vote!(8)
 survey.vote!(6)
 ```
 
+### NPS Calculation
 The NPS score can be calculated by:
 ```
 # Calculate the NPS score
