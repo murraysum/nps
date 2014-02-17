@@ -11,6 +11,13 @@ module Nps
 
   attr_accessor :configuration
 
+  # Public: Set configuration options for the library
+  #
+  # Examples:
+  #   Nps.configure do |config|
+  #     config.persistance = PersistanceClass
+  #   end
+  #
   def configure
     self.configuration ||= Nps::Configuration.new
     yield(configuration) if block_given?
