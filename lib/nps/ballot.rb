@@ -12,10 +12,9 @@ module Nps
     # value - The value of the vote on the NPS scale.
     # opts - A hash of meta data associated with the vote (default: {}) 
     def vote!(value, opts = {})
-      @votes << OpenStruct.new(
-        :value => value.to_f,
-        :options => opts
-      )
+      vote = OpenStruct.new(:value => value.to_f, :options => opts)
+      @votes << vote
+      vote
     end
 
     # Public: Whether any votes have been cast.
