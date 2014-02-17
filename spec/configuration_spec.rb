@@ -7,19 +7,19 @@ describe Nps::Configuration do
       @configuration = Nps::Configuration.new
     end
 
-    it 'should set the default persistance engine' do
-      @configuration.persistance == Nps::Ballot
+    it 'should set the default ballot engine' do
+      @configuration.ballot_engine == Nps::Ballot
     end
   end
 
   describe 'with custom options' do
     before :each do
       @configuration = Nps::Configuration.new
-      @configuration.persistance = Struct
+      @configuration.ballot_engine = Struct
     end
 
-    it 'should set a custom persistance engine' do
-      @configuration.persistance == Struct
+    it 'should set a custom ballot engine' do
+      @configuration.ballot_engine == Struct
     end
   end
 end

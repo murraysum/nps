@@ -11,11 +11,12 @@ module Nps
 
   attr_accessor :configuration
 
-  # Public: Set configuration options for the library
+  # Public: Set custom configuration options
+  # such as how to store the NPS votes.
   #
   # Examples:
   #   Nps.configure do |config|
-  #     config.persistance = PersistanceClass
+  #     config.ballot_engine = BallotClass
   #   end
   #
   def configure

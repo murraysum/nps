@@ -11,7 +11,7 @@ module Nps
     #   survey.score
     #
     def initialize
-      @ballot = Nps.configuration.persistance.new
+      @ballot = Nps.configuration.ballot_engine.new
     end
 
     # Public: The Net Promoter Score (NPS) for the survey.

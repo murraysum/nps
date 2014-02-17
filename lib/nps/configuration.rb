@@ -1,13 +1,13 @@
 module Nps
   class Configuration
 
-    # Public: Retrieve or assign a persistance class to store the NPS votes.
-    attr_accessor :persistance
+    # Public: Retrieve or assign a ballot engine to store the NPS votes.
+    attr_accessor :ballot_engine
 
     # Public: Initialize a new configuration for the library
     # with the default behaviour.
     def initialize
-      @persistance = Nps::Ballot
+      @ballot_engine = Nps::Ballot
     end
   end
 end
