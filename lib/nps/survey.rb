@@ -37,8 +37,9 @@ module Nps
     # Public: Add a vote to the survey with the given value
     #
     # value - The value of the vote on the NPS scale (0..10)
-    def vote!(value)
-      ballot.vote!(value)
+    # opts - A hash of meta data associated with the vote (default: {})
+    def vote!(value, opts = {})
+      ballot.vote!(value, opts)
     end
 
     private
