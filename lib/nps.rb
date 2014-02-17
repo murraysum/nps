@@ -14,6 +14,8 @@ module Nps
 
   def configure
     self.configuration ||= Nps::Configuration.new
-    yield(configuration)
+    yield(configuration) if block_given?
   end
+
+  Nps.configure
 end

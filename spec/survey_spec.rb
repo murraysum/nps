@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Nps::Survey do
   describe 'with a survey' do
     before :each do
-      Nps.configure {}
       @survey = Nps::Survey.new
       # Promoters
       @survey.vote!(10)
